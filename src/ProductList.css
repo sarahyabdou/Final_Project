@@ -47,6 +47,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -70,8 +72,7 @@ body {
     border-radius: 5px;
     text-align: center;
     position: relative;
-    
-    gap: 20px;
+   
 }
 
 /* Pseudo-classes - Hover effect on product button */
@@ -92,10 +93,7 @@ body {
     margin-bottom: 10px;
 }
 
-.product-image {
-    max-width: 100%;
-    height: 200px; /* Adjust height for better consistency */
-}
+
 
 .product-button {
     background-color: #e74c3c;
@@ -133,6 +131,79 @@ body {
     text-decoration: none;
     font-size: 20px;
 }
+
+
+/* Category Grid */
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between categories */
+    justify-content: center; /* Center-align the grid */
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto; /* Center the grid horizontally */
+}
+
+/* Category Card */
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content inside the card */
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures no image spills out of the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card */
+    padding: 15px;
+    text-align: center;
+}
+
+/* Category Card Hover Effect */
+.category-card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+
+
+/* Category Title */
+.category-title {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Category Description */
+.category-description {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .category-card {
+        flex: 0 0 calc(33.33% - 20px); /* Still 3 cards per row */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .category-card {
+        flex: 0 0 calc(50% - 20px); /* Two cards per row */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .category-card {
+        flex: 0 0 100%; /* One card per row on small screens */
+        max-width: 100%;
+    }
+}
+
 .tag_home_link h3{
     font-size: 30px;
 }
