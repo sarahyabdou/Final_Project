@@ -48,12 +48,42 @@ body {
     justify-content: center;
 }
 
+.category-title {
+    position: relative;
+    text-align: center;
+    margin: 40px 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
 
+.category-title::before,
+.category-title::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background-color: #4CAF50;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.category-title::before {
+    left: 30%;
+    transform: translate(-110%, -50%);
+}
+
+.category-title::after {
+    right: 30%;
+    transform: translate(110%, -50%);
+}
 .product-list {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-    /* background-color: pink; */
+    background-color: pink; */
     /* justify-content: space-between; */
     padding: 20px;
     width: 100%;
@@ -65,8 +95,8 @@ body {
 .product-card {
     flex: 0 0 calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap */
     max-width: calc(26.33% - 20px); /* Adjust max-width for 3 cards per row with 20px gap */
-    margin-bottom: 20px;
-    padding: 20px;
+    margin: 20px;
+    padding: 40px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -86,7 +116,13 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+.product-image {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
 .product-price {
     color: #e74c3c;
     font-size: 1.2rem;
@@ -283,12 +319,16 @@ body {
   }
   
   .product-button:hover {
-    background-color: #45a049;
+    background-color: #a1bca2;
   }
   
-  .product-button.added-to-cart {
-    background-color: grey; /* Grey when product is added */
+ 
+  .product-button.added {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
   }
+  
   @media (max-width: 1200px) {
     .product-card {
       flex: 1 1 calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap on medium screens */

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import { useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -305,16 +305,17 @@ const handlePlantsClick = (e) => {
              <div className="product-grid">
              {plantsArray.map((category, catIndex) => (
                <div key={catIndex}>
-                 <h2>{category.category}</h2>
+                 <h2 className="category-title">{category.category}</h2>
                  <div className="category-grid">
                    {category.plants.map((plant, index) => (
                      <div key={index} className="product-card">
                        <h3>{plant.name}</h3>
-                       <img src={plant.image} alt={plant.name} />
+                       <img className="product-image" src={plant.image} alt={plant.name} />
+                       <h4>Cost: {plant.cost}</h4>
                        <p>{plant.description}</p>
-                       <p>Cost: {plant.cost}</p>
+                       
                        <button
-                                className="product-button"
+                                className={`product-button ${addedToCart[plant.name] ? 'added' : ''}`}
                                  onClick={() => handleAddToCart(plant)}
                                  disabled={addedToCart[plant.name]}
                             >
